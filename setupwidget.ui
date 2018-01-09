@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SetupWidget</class>
+ <widget class="QWidget" name="SetupWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>300</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QFormLayout" name="formLayout">
+     <item row="0" column="0">
+      <widget class="QRadioButton" name="radAskAll">
+       <property name="text">
+        <string>Alles</string>
+       </property>
+       <property name="checked">
+        <bool>true</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QRadioButton" name="radAskGrandCycles">
+       <property name="text">
+        <string>Großzyklen:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="1">
+      <widget class="QListWidget" name="lstGrandCycles">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="0">
+      <widget class="QRadioButton" name="radAskCycles">
+       <property name="text">
+        <string>Zyklen:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="2" column="1">
+      <widget class="QListWidget" name="lstCycles">
+       <property name="enabled">
+        <bool>false</bool>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>Fragen nach:</string>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="1">
+      <layout class="QVBoxLayout" name="verticalLayout_2">
+       <item>
+        <widget class="QCheckBox" name="chkAnswerNr">
+         <property name="text">
+          <string>Nummer</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QCheckBox" name="chkAnswerTitle">
+         <property name="text">
+          <string>Titel</string>
+         </property>
+         <property name="checked">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>chkAnswerNr</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>144</x>
+     <y>250</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>238</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>chkAnswerTitle</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>171</x>
+     <y>278</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>274</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radAskGrandCycles</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lstGrandCycles</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>70</x>
+     <y>48</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>213</x>
+     <y>65</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radAskCycles</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>lstCycles</receiver>
+   <slot>setEnabled(bool)</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>40</x>
+     <y>147</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>217</x>
+     <y>189</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lstGrandCycles</sender>
+   <signal>itemChanged(QListWidgetItem*)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>76</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>67</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>lstCycles</sender>
+   <signal>itemChanged(QListWidgetItem*)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>317</x>
+     <y>193</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>397</x>
+     <y>187</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radAskAll</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>39</x>
+     <y>19</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radAskGrandCycles</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>27</x>
+     <y>44</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>4</x>
+     <y>51</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>radAskCycles</sender>
+   <signal>toggled(bool)</signal>
+   <receiver>SetupWidget</receiver>
+   <slot>checkCanStart()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>24</x>
+     <y>151</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>0</x>
+     <y>172</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>checkCanStart()</slot>
+ </slots>
+</ui>

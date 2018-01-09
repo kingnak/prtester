@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>TestWidget</class>
+ <widget class="QWidget" name="TestWidget">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>400</width>
+    <height>226</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QLineEdit" name="txtQuestion">
+     <property name="readOnly">
+      <bool>true</bool>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLineEdit" name="txtAnswer"/>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnCheck">
+     <property name="text">
+      <string>Check</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QLabel" name="txtStat">
+     <property name="text">
+      <string>0 / 0</string>
+     </property>
+     <property name="alignment">
+      <set>Qt::AlignCenter</set>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout" stretch="0,1">
+     <item>
+      <widget class="QLabel" name="lblWrong">
+       <property name="text">
+        <string>Falsch!</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QLabel" name="lblSolution">
+       <property name="text">
+        <string>TextLabel</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnSolve">
+     <property name="text">
+      <string>Lösen</string>
+     </property>
+    </widget>
+   </item>
+   <item>
+    <widget class="QPushButton" name="btnNext">
+     <property name="text">
+      <string>Weiter</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>txtAnswer</sender>
+   <signal>returnPressed()</signal>
+   <receiver>TestWidget</receiver>
+   <slot>checkAnswer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>283</x>
+     <y>47</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>401</x>
+     <y>62</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>btnCheck</sender>
+   <signal>clicked()</signal>
+   <receiver>TestWidget</receiver>
+   <slot>checkAnswer()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>281</x>
+     <y>80</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>398</x>
+     <y>93</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>checkAnswer()</slot>
+ </slots>
+</ui>
